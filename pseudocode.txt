@@ -1,0 +1,24 @@
+Initialize:
+1. Generate n random solutions (nests) and evaluate their fitness.
+
+Main Loop:
+2. While stopping criterion is not met:
+    a. For each cuckoo i:
+        i. Generate a new solution (new egg) for cuckoo i using a Lévy flight based on its current solution:
+            new_solution = current_solution + alpha * Levy(beta)
+        ii. Randomly choose a nest j (other than cuckoo i's current nest).
+        iii. Evaluate the fitness of new_solution.
+        iv. If new_solution is better than the solution in nest j:
+            - Replace the solution in nest j with new_solution.
+
+    b. With probability p_a, abandon a fraction of the worst nests:
+        i. For each abandoned nest:
+            - Generate new solutions using random initialization.
+            - Evaluate their fitness and replace the old nests.
+
+    c. Rank all solutions and find the best.
+    d. Optionally, replace a fraction of the worst solutions with new solutions generated via Lévy flights from the best solution.
+
+3. Output the best solution found.
+
+End Algorithm
