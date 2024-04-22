@@ -1,7 +1,7 @@
 Inicialização:
 1. Gerar n soluções aleatórias (ninhos) e avaliar suas aptidões.
 
-Laço Principal:
+Loop Principal:
 2. Enquanto o critério de parada não for atingido:
     a. Para cada cuco i:
         i. Gerar uma nova solução (novo ovo) para cuco i usando um voo de Lévy baseado em sua solução atual:
