@@ -1,24 +1,24 @@
-Initialize:
-1. Generate n random solutions (nests) and evaluate their fitness.
+Inicialização:
+1. Gerar n soluções aleatórias (ninhos) e avaliar suas aptidões.
 
-Main Loop:
-2. While stopping criterion is not met:
-    a. For each cuckoo i:
-        i. Generate a new solution (new egg) for cuckoo i using a Lévy flight based on its current solution:
-            new_solution = current_solution + alpha * Levy(beta)
-        ii. Randomly choose a nest j (other than cuckoo i's current nest).
-        iii. Evaluate the fitness of new_solution.
-        iv. If new_solution is better than the solution in nest j:
-            - Replace the solution in nest j with new_solution.
+Laço Principal:
+2. Enquanto o critério de parada não for atingido:
+    a. Para cada cuco i:
+        i. Gerar uma nova solução (novo ovo) para cuco i usando um voo de Lévy baseado em sua solução atual:
+            nova_solução = solução_atual + alpha * Levy(beta)
+        ii. Escolher aleatoriamente um ninho j (diferente do ninho atual do cuco i).
+        iii. Avaliar a aptidão da nova_solução.
+        iv. Se a nova_solução for melhor que a solução no ninho j:
+            - Substituir a solução no ninho j pela nova_solução.
 
-    b. With probability p_a, abandon a fraction of the worst nests:
-        i. For each abandoned nest:
-            - Generate new solutions using random initialization.
-            - Evaluate their fitness and replace the old nests.
+    b. Com probabilidade p_a, abandonar uma fração dos piores ninhos:
+        i. Para cada ninho abandonado:
+            - Gerar novas soluções usando inicialização aleatória.
+            - Avaliar suas aptidões e substituir os ninhos antigos.
 
-    c. Rank all solutions and find the best.
-    d. Optionally, replace a fraction of the worst solutions with new solutions generated via Lévy flights from the best solution.
+    c. Classificar todas as soluções e encontrar a melhor.
+    d. Opcionalmente, substituir uma fração das piores soluções por novas soluções geradas via voos de Lévy a partir da melhor solução.
 
-3. Output the best solution found.
+3. Retornar a melhor solução encontrada.
 
-End Algorithm
+Fim do Algoritmo
