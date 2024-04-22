@@ -3,7 +3,7 @@ import math
 
 class CuckooSearch:
     def __init__(self, problem, population_size, max_iterations):
-        self.problem = problem  # This is now an instance of an Optimization subclass
+        self.problem = problem
         self.population_size = population_size
         self.max_iterations = max_iterations
         self.alpha = 1.0  # Scaling factor for Lévy flights
